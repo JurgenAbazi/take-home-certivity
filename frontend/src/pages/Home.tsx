@@ -19,10 +19,10 @@ function Home() {
 
                     {/*<div className="border-b-1 w-full my-2"></div>*/}
 
+                    {/*<span className="font-bold">Comments</span>*/}
                     {/*<div className="flex justify-between items-center gap-3 mb-2">*/}
-                    {/*    <span className="font-bold">Comments</span>*/}
-                    {/*    <button className="px-3 py-1 bg-blue-500 text-white rounded" type="button">+ Add Comment*/}
-                    {/*    </button>*/}
+                    {/*    <input className="flex-grow" type="text"></input>*/}
+                    {/*    <button className="px-3 py-1 bg-blue-500 text-white rounded" type="button">+ Add Comment</button>*/}
                     {/*</div>*/}
 
                     {/*<div className="flex flex-col gap-2">*/}

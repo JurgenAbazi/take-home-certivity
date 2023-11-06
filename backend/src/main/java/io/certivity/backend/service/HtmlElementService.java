@@ -1,7 +1,7 @@
 package io.certivity.backend.service;
 
 import io.certivity.backend.domain.HtmlElementComponent;
-import io.certivity.backend.repository.MongoDBRepository;
+import io.certivity.backend.repository.MongoHtmlElementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +10,10 @@ import java.util.Optional;
 
 @Service
 public class HtmlElementService {
-    private final MongoDBRepository mongoDBRepository;
+    private final MongoHtmlElementRepository mongoDBRepository;
 
     @Autowired
-    public HtmlElementService(MongoDBRepository mongoDBRepository) {
+    public HtmlElementService(MongoHtmlElementRepository mongoDBRepository) {
         this.mongoDBRepository = mongoDBRepository;
     }
 

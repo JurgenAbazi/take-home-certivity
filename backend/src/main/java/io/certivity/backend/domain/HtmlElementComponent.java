@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,21 +24,11 @@ public class HtmlElementComponent {
 
     private final String url;
 
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private final LocalDate createdAt;
 
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate lastModified;
-
-//    public HtmlElementComponent(String text, String html, int length, int sort, String url) {
-//        this.text = text;
-//        this.html = html;
-//        this.length = length;
-//        this.sort = sort;
-//        this.url = url;
-//        this.createdAt = LocalDate.now();
-//        this.lastModified = LocalDate.now();
-//    }
 
     public HtmlElementComponent(String id, String text, String html, int length, int sort,
                                 String url, LocalDate createdAt, LocalDate lastModified) {
@@ -49,10 +40,6 @@ public class HtmlElementComponent {
         this.url = url;
         this.createdAt = createdAt;
         this.lastModified = lastModified;
-    }
-
-    public String parseToString() {
-        return "<" + getHtml() + ">" + getText() + "</" + getHtml() + ">";
     }
 
 }
