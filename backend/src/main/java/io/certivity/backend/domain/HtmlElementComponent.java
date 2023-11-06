@@ -1,5 +1,6 @@
 package io.certivity.backend.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -22,8 +23,10 @@ public class HtmlElementComponent {
 
     private final String url;
 
+    @JsonFormat(pattern="yyyy-MM-dd")
     private final LocalDate createdAt;
 
+    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate lastModified;
 
 //    public HtmlElementComponent(String text, String html, int length, int sort, String url) {
