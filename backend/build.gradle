@@ -33,7 +33,14 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-autoconfigure'
     implementation 'org.springframework.boot:spring-boot-configuration-processor'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // JSoup
     implementation 'org.jsoup:jsoup:1.15.3'
+
+    // MongoDB
+//    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+//    implementation 'org.mongodb:mongo-java-driver:3.12.14'
+//    implementation 'org.mongodb:mongodb-driver-sync:4.11.0'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'

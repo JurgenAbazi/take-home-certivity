@@ -1,19 +1,29 @@
-package io.certivity.backend;
+package io.certivity.backend.controller;
 
 import io.certivity.backend.domain.HtmlElementComponent;
+import io.certivity.backend.service.HtmlElementService;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 public class ApiController {
+    private final HtmlElementService htmlElementService;
+
+    @Autowired
+    public ApiController(HtmlElementService htmlElementService) {
+        this.htmlElementService = htmlElementService;
+    }
+
 
     public record CustomResponse(String message) {
     }
@@ -39,7 +49,9 @@ public class ApiController {
                 for (Element element : elements) {
                     componentList.add(extractElement(element, sortCounter++, url));
                 }
+                htmlElementService.saveAll(componentList);
             }
+
 
             return ResponseEntity.ok("elements");
         } catch (Exception e) {
@@ -58,7 +70,7 @@ public class ApiController {
         String html = element.tagName();
         int length = text.length();
 
-        return new HtmlElementComponent(text, html, length, sort, url);
+        return new HtmlElementComponent(null, text, html, length, sort, url, LocalDate.now(), LocalDate.now());
     }
 }
 
