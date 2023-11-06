@@ -33,6 +33,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-autoconfigure'
     implementation 'org.springframework.boot:spring-boot-configuration-processor'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.jsoup:jsoup:1.15.3'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'
